@@ -1,3 +1,5 @@
+import type { LoanApplication } from "./application-types";
+
 export type LoanStatus = "submitted" | "disbursed" | "not_converted";
 export type DeskRole = "desk" | "admin";
 export type ReferrerType = "broker" | "desk";
@@ -93,6 +95,7 @@ export interface LoanReferral {
 
 export interface DemoState {
   referrals: LoanReferral[];
+  applications: Record<string, LoanApplication>;
   nextId: number;
   refSeed: number;
   now: string;

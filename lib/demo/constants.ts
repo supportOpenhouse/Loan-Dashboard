@@ -8,7 +8,7 @@ import type {
 
 export const DEMO_START = "2026-12-20T11:00:00+05:30";
 export const DUP_WINDOW_DAYS = 90;
-export const STORAGE_KEY = "oh-loans-desk-demo-v1";
+export const STORAGE_KEY = "oh-loans-desk-demo-v2";
 export const SESSION_KEY = "oh-loans-desk-session-v1";
 
 export const STATUS_META: Record<

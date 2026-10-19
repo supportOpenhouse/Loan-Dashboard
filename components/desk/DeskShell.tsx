@@ -63,7 +63,7 @@ export function DeskShell({
   const onCreated = useCallback(
     (id: number) => {
       setNewLeadOpen(false);
-      router.push(`/leads/${id}`);
+      router.push(`/leads/${id}?tab=application`);
     },
     [router],
   );

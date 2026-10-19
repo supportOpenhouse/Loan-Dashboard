@@ -273,5 +273,5 @@ export function createSeedState(): DemoState {
 
   referrals.sort((a, b) => +new Date(b.createdAt) - +new Date(a.createdAt));
 
-  return { referrals, nextId, refSeed, now };
+  return { referrals, applications: {}, nextId, refSeed, now };
 }
