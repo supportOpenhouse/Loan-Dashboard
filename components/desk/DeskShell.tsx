@@ -102,15 +102,6 @@ export function DeskShell({
           {counts.submitted}
         </span>
       </Link>
-
-      <div className="mt-auto px-2 pt-6 text-[11px] leading-relaxed text-[#8b97a4]">
-        Core API · /api/v1/oh/loans/desk/*
-        <br />
-        Signed in with Google
-        <br />
-        <br />
-        V2 adds calls, application, documents, Ambak API, payouts.
-      </div>
     </>
   );
 
