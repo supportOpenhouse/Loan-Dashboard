@@ -19,6 +19,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { OpenhouseLogo } from "@/components/brand/OpenhouseLogo";
 import { Toast } from "@/components/desk/Toast";
 import { NewLeadDialog } from "@/components/desk/NewLeadDialog";
 import { useDemo } from "@/lib/demo/store";
@@ -80,10 +81,8 @@ export function DeskShell({
   const rail = (
     <>
       <div className="px-2 pb-3.5">
-        <div className="text-[15px] font-extrabold tracking-tight text-white">
-          openhouse
-        </div>
-        <div className="mt-0.5 text-[11px] font-semibold tracking-[0.06em] text-rail-foreground uppercase">
+        <OpenhouseLogo tone="light" className="h-6 w-[120px]" priority />
+        <div className="mt-1.5 text-[11px] font-semibold tracking-[0.06em] text-rail-foreground uppercase">
           Loans desk · V1
         </div>
       </div>

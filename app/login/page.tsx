@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { OpenhouseLogo } from "@/components/brand/OpenhouseLogo";
 import { DESK_USERS } from "@/lib/demo/constants";
 import { useDemo } from "@/lib/demo/store";
 import { cn } from "@/lib/utils";
@@ -34,10 +36,8 @@ export default function LoginPage() {
     <div className="flex min-h-screen flex-col lg:flex-row">
       <aside className="flex flex-col justify-between bg-rail px-8 py-10 text-rail-foreground lg:w-[42%] lg:px-12 lg:py-14">
         <div>
-          <div className="text-[22px] font-extrabold tracking-tight text-white">
-            openhouse
-          </div>
-          <div className="mt-1 text-[11px] font-semibold tracking-[0.08em] text-rail-foreground uppercase">
+          <OpenhouseLogo tone="light" className="h-7 w-[148px]" priority />
+          <div className="mt-2 text-[11px] font-semibold tracking-[0.08em] text-rail-foreground uppercase">
             Loans desk · V1
           </div>
           <p className="mt-8 max-w-sm text-[15px] leading-relaxed text-[#a8b2bd]">
@@ -54,6 +54,7 @@ export default function LoginPage() {
 
       <main className="flex flex-1 items-center justify-center bg-background px-5 py-12 sm:px-8">
         <div className="w-full max-w-md rounded-2xl border border-border bg-card p-7 shadow-sm sm:p-8">
+          <OpenhouseLogo tone="dark" className="mb-5 h-6 w-[128px]" />
           <h1 className="text-xl font-extrabold tracking-tight text-foreground">
             Sign in
           </h1>
@@ -103,9 +104,15 @@ export default function LoginPage() {
             type="button"
             onClick={handleSignIn}
             disabled={signingIn}
-            className="mt-6 flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-primary text-[14px] font-bold text-primary-foreground transition-colors hover:bg-[#e64a19] disabled:opacity-60"
+            className="mt-6 flex h-11 w-full items-center justify-center gap-2.5 rounded-xl border border-border bg-white text-[14px] font-bold text-foreground transition-colors hover:bg-muted/60 disabled:opacity-60"
           >
-            <GoogleMark />
+            <Image
+              src="/brand/google.svg"
+              alt=""
+              width={18}
+              height={18}
+              className="size-[18px]"
+            />
             Continue with Google
           </button>
 
@@ -116,32 +123,5 @@ export default function LoginPage() {
         </div>
       </main>
     </div>
-  );
-}
-
-function GoogleMark() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden>
-      <path
-        fill="#fff"
-        d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615Z"
-        opacity=".9"
-      />
-      <path
-        fill="#fff"
-        d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18Z"
-        opacity=".75"
-      />
-      <path
-        fill="#fff"
-        d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.997 8.997 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332Z"
-        opacity=".6"
-      />
-      <path
-        fill="#fff"
-        d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58Z"
-        opacity=".85"
-      />
-    </svg>
   );
 }
