@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Openhouse Loans Desk · V1 (demo)
 
-## Getting Started
+Responsive web dashboard for the Openhouse loan desk. Matches the V1 lead-collection spec: list leads, key in phone/CRM leads, copy client details for Ambak, and set a final status (Disbursed / Not converted) with remarks.
 
-First, run the development server:
+## Run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Demo login
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Pick a seeded desk user on `/login`:
 
-## Learn More
+| User   | Role  | Can change final status |
+|--------|-------|-------------------------|
+| Adiksha | desk  | First final only        |
+| Akshit  | admin | Change / reopen         |
+| Ankit   | admin | Change / reopen         |
 
-To learn more about Next.js, take a look at the following resources:
+Session and lead mutations persist in `localStorage`. Use **Reset demo** in the account menu to restore the prototype seed (12 leads, demo clock 20 Dec 2026 11:00 IST).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scope
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **In V1:** leads tabs, search, lead detail, Copy for Ambak, New lead dialog, final status + admin change/reopen.
+- **Out of V1:** live core API, real Google OAuth, calls, documents, Ambak API, payouts.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Design tokens follow `V1_lead_collection/prototype/index.html` (desk palette, `#FA541C` primary, status pills).
